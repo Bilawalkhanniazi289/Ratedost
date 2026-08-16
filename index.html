@@ -1638,29 +1638,3 @@ window.addEventListener("DOMContentLoaded", async ()=>{
     banner.textContent = "Demo / Local Mode: Persistent multi-device storage is unavailable in this environment. Data is stored safely in your browser.";
     document.body.insertBefore(banner, document.body.firstChild);
   }
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBD8GM4wSWQTFbBROggSaLvTc0dss7LTns",
-    authDomain: "ratedost.firebaseapp.com",
-    projectId: "ratedost",
-    storageBucket: "ratedost.firebasestorage.app",
-    messagingSenderId: "816225389317",
-    appId: "1:816225389317:web:dc8c8b49d2d9577c61c56c",
-    measurementId: "G-G89L4APY8B"
-  };
-  
-  if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const adminBtn = document.getElementById("admin-btn");
-    if(adminBtn) adminBtn.style.display = "none";
-    
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user && user.email === "bilawalkhanniazi289@gmail.com") {
-        if(adminBtn) adminBtn.style.display = "block";
-      }
-    });
-  });
-</script>
